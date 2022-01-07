@@ -95,7 +95,9 @@ class PokemonDetail extends StatelessWidget {
             spacing: context.dynamicWidth(0.02),
             children: item != null
                 ? item.map((e) => buildChip(color, e.name)).toList()
-                : [buildChip(color, 'Not Found')])
+                : title == 'Next Evolution'
+                    ? [buildChip(color, 'This is the final form')]
+                    : [buildChip(color, 'This is first form')])
       ],
     );
   }
